@@ -1,5 +1,5 @@
 # Node-red-script-lgtv-python
-Sequence of red node instructions and python script, to play youtube from Alexa to LG tv.
+Sequence of instructions node-red and python script, for play youtube from Alexa to LG tv.
 
 
 Tools needed:
