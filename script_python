@@ -1,0 +1,30 @@
+from youtubesearchpython import VideosSearch
+import paho.mqtt.client as mqtt
+Broker = "address_mqtt"
+search="test/search" # topic for text to search
+topic = "test/link" # topic for address video youtube
+
+from paho.mqtt.client import Client
+client = Client(client_id = search)
+
+def on_connect(client, userdata, flags, rc):
+    print("connect")
+
+def on_message(client, userdata, message):
+    print( message.payload.decode() )
+    link(message.payload.decode())
+
+client = mqtt.Client()
+
+client.connect(Broker, 1883, 60)
+def link(download):
+    videosSearch = VideosSearch(download, limit=1)
+    orade = str(videosSearch.result())
+    devi = orade.find('/watch?v=')
+    link = orade[devi:devi+ 20]
+    mqtt=link[9:]
+    print(mqtt)
+    client.publish(topic, mqtt)
+while True:
+    client.on_connect = on_connect
+    client.on_message = on_message
