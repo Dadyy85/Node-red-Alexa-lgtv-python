@@ -8,4 +8,4 @@ Node-red
     node-red-contrib-alexa-remote2-applestrudel
     node-red-contrib-lgtv
 mqtt broker
-platform to host Python scripts
+platform (example raspberry pi) to host Python scripts
