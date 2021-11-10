@@ -22,7 +22,7 @@ def link(download):
     videosSearch = VideosSearch(download, limit=1)
     link = str(videosSearch.result())
     link = link.find('/watch?v=')
-    link = link[devi:devi+ 20]
+    link = link[link:link+ 20]
     link=link[9:]
     client.publish(topic, mqtt)
 while True:
