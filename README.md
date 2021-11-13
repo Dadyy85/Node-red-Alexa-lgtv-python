@@ -9,3 +9,9 @@ Node-red  https://github.com/node-red/node-red <br>
     *node-red-contrib-lgtv  https://github.com/hobbyquaker/node-red-contrib-lgtv <br>
 *mqtt broker <br>
 *platform (example raspberry pi) to host Python scripts
+
+<p>Principle of operation:</p>
+<p>Starting with an alexa voice command containing the word "youtube and the name of the video".</p>
+<p>Node red reads the command and sends an mqtt message, containing the name of the video.</p>
+<p>the python script reads the mqtt message, and performs a search on youtube.</p>
+<p>Found the video, it transmits the address (via mqtt) useful to the lgtv node.</p>
